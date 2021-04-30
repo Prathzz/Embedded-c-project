@@ -11,7 +11,7 @@
 #include<avr/io.h>
 #include"act_4_emb.h"
 
-void Initialize_UART(uint16_t ubrr_value){
+void SET_UART(uint16_t ubrr_value){
 
     UBRR0L = ubrr_value;
     UBRR0H = (ubrr_value>>8) & (0x00ff);
