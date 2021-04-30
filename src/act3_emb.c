@@ -1,6 +1,6 @@
 /**
  * @file  act3_emb.c
- * @author Raghavendra A M
+ * @author Prathamesh Devadiga
  * @brief 
  * @version 0.1
  * @date 2021-04-26
@@ -14,7 +14,7 @@
 #include<avr/io.h>
 
 //initializing timer and counter register
-void Initialize_PWM(void)
+void Set_PWM(void)
 {
     /*Configuring the registers and ports*/
     TCCR1A|= (1<<COM1A1)|(1<<WGM10)|(1<<WGM11);
