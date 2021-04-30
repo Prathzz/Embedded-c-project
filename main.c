@@ -3,7 +3,7 @@
  * @author Prathamesh Devadiga
  * @brief 
  * @version 0.1
- * @date 2021-04-27
+ * @date 2021-04-30
  * 
  * @copyright Copyright (c) 2021
  * 
@@ -13,16 +13,16 @@
 #include "act_3_emb.h"
 #include "act_4_emb.h"
 #include<avr/io.h>
-void peripheral_init(void)
+void Initializing_Everything(void)
 {
     
-    LED(); //Configure LED and Switch pins
+    Setting_up_LED(); //setting LED and Push buttons
     
-    Initilize_ADC(); //Configure ADC registers and pins
+    Set_ADC(); //Setting ADC registers 
    
-    Initialize_PWM(); //Configure PWM registers and pins
+    Set_PWM(); //Setting PWM registers 
     
-    Initialize_UART(103); //Configure UART serial communication pin
+    SET_UART(103); //Setting UART serial com pin
 }
     
    
@@ -30,27 +30,27 @@ uint16_t temp;
 char temp_data;
 int main(void)
 {
-    // Initialize peripherals
-    peripheral_init();
-    while(1)
+    // Initializing everything
+    Initializing_Everything();
+    for(;;)
     {
-        if(SENSOR_ON) //If switch_1 is ON
+        if(SENS_ON) //check switch_1 is ON
         {
-            if(HEAT_ON) //If switch_2 is ON
+            if(HEATER_ON) //check switch_2 is ON
             {
-                state1(LED_ON);//LED is ON
+                state1(LED_ON_CON);//LED is turned  ON
                 temp=Read_ADC(0);
                 temp_data = Output_PWM(temp);
                 UART_write(temp_data);
             }
             else
             {  
-                state1(LED_OFF);
+                state1(LED_OFF_CON);
             }
         }
         else
         {
-            state1(LED_OFF);//LED is OFF
+            state1(LED_OFF_CON);//LED is turned OFF
             OCR1A=0;
         }
     }
