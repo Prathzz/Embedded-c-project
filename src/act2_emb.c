@@ -24,7 +24,7 @@ uint16_t Read_ADC(uint8_t ch)
     return(ADC);
 }
 
-void Initilize_ADC()
+void Set_ADC()
 {
     ADMUX=(1<<REFS0);
     ADCSRA=(1<<ADEN)|(7<<ADPS0);
