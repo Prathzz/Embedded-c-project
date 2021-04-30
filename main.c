@@ -1,6 +1,6 @@
 /**
- * @file Main.c
- * @author Raghavendra A M
+ * @file main.c
+ * @author Prathamesh Devadiga
  * @brief 
  * @version 0.1
  * @date 2021-04-27
