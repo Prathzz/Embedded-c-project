@@ -13,7 +13,7 @@
 #define __ACT_4TH_EMB_H__
 #include<avr/io.h>
 
-void Initialize_UART(uint16_t ubrr); //Read characters from UART port
+void SET_UART(uint16_t ubrr); //Read char
 char UARTread();
 void UART_write(char data);
 
