@@ -15,5 +15,5 @@
  * @return uint16_t 
  */
 uint16_t Read_ADC(uint8_t ch);
-void Initilize_ADC();
+void Set_ADC();
 #endif
