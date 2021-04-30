@@ -14,5 +14,5 @@
 #include<avr/io.h>
 
 char Output_PWM(uint16_t temp_value);
-void Initialize_PWM(void);
+void Set_PWM(void);
 #endif
