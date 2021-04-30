@@ -13,14 +13,14 @@
 #include "act_1_emb.h"
 
 //Macro definition 
-#define LED_ON 	(0x01)		//led set
-#define LED_OFF	(0x00)		//led reset
+#define LED_ON_CON 	(0x01)		//led is  in set condition
+#define LED_OFF_CON	(0x00)		//led is in reset condition
 
 #define LED_PORT (PORTB)    
 #define LED_PIN  (PORTB0)   
-#define SENSOR_ON !(PIND&(1<<PD0))   // Switch1 SET
-#define HEAT_ON !(PIND&(1<<PD1))     // Switch2 SET
-void state1(uint8_t state);  //led state
-void LED(void);             //Initialize LED
+#define SENS_ON !(PIND&(1<<PD2))   // Switch1 is on
+#define HEATER_ON !(PIND&(1<<PD3))     // Switch2 is on
+void state1(uint8_t state);  //LED status
+void Setting_up_LED(void);             //Initializing the LED 
 
 #endif //finish __ACT_1ST_EMB_H_
